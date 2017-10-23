@@ -5,7 +5,7 @@ class Laboratorio(models.Model):
     nome_laboratorio = models.CharField(max_length = 100)
     sigla_laboratorio = models.CharField(max_length= 3)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.nome_laboratorio
 
 class Marcacao(models.Model):
@@ -16,5 +16,5 @@ class Marcacao(models.Model):
     data = models.DateField()
 
 
-    def __unicode__(self):
+    def __str__(self):
         return self.data_marcacao
