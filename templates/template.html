@@ -24,6 +24,7 @@
 
   <body>
 
+        {#  BARRA DE CIMA #}
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -43,118 +44,25 @@
         </div>
       </div>
     </nav>
+        {# FIM BARRA CIMA #}
 
     <div class="container-fluid">
       <div class="row">
 
+            {#  MENU #}
           <div class="col-sm-3 col-md-2 sidebar">
                {% include 'menu.html' %}
             </div>
+            {# FIM MENU #}
 
-
-
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">Dashboard</h1>
-
-          <h2 class="sub-header">Tebela de vendas</h2>
-            <button type="button" class="btn btn-success" data-target="#myModal" data-toggle="modal">Adcionar</button>
-
-{#            MODAL#}
-
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-      </div>
-      <div class="modal-body">
-
-          <form class="form-horizontal">
-              <div class="form-group">
-                <label for="inputEmail3" class="col-sm-3 control-label">Nome Barbeiro</label>
-                <div class="col-sm-8">
-
-                    <select class="form-control">
-                      <option>Felipe</option>
-                      <option>Paolo</option>
-                    </select>
-
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="inputEmail3" class="col-sm-3 control-label">Nome Cliente</label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control" id="inputEmail3" placeholder="Nome do Cliente">
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="inputPassword3" class="col-sm-3 control-label">Valor</label>
-                <div class="col-sm-8">
-                     <input type="text" class="form-control " id="ValoresItens" placeholder="Valor Corte">
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                  <div class="checkbox">
-                    <label>
-                      <input type="checkbox"> Remember me
-                    </label>
-                  </div>
-                </div>
-              </div>
-          </form>
+            {# CONTEUDO DA PAGINA #}
+         {% block conteudo %}
+         {% endblock %}
+            {# FIM CONTEUDO DA PAGINA #}
 
 
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
 
-{#            FIM MODAL#}
-
-          <div class="table-responsive">
-            <table class="table table-hover">
-              <thead>
-                <tr>
-                  <th>Nome Barbeiro</th>
-                  <th>Nome Cliente</th>
-                  <th>Data</th>
-                  <th>Valor</th>
-                  <th>Ação</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1,001</td>
-                  <td>Lorem</td>
-                  <td>ipsum</td>
-                  <td>dolor</td>
-                  <td>
-                      <button type="button" class="btn btn-primary">Editar</button>
-                      <button type="button" class="btn btn-danger">Excluir</button>
-                  </td>
-                </tr>
-               <tr>
-                  <td>1,001</td>
-                  <td>Lorem</td>
-                  <td>ipsum</td>
-                  <td>dolor</td>
-                  <td>
-                      <button type="button" class="btn btn-primary">Editar</button>
-                      <button type="button" class="btn btn-danger">Excluir</button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
