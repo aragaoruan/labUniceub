@@ -15,6 +15,5 @@ class Marcacao(models.Model):
     hora = models.TimeField()
     data = models.DateField()
 
-
     def __str__(self):
         return self.data_marcacao

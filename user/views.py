@@ -3,17 +3,13 @@ from user.forms import UserModelForm
 from django.contrib.auth import authenticate, login ,logout
 from django.contrib.auth.decorators import login_required
 
-@login_required
-def index(request):
-    return render(request, 'user/index.html')
-
 def cadastro(request):
     form = UserModelForm(request.POST or None)
     context = {'form':form}
     if request.method == 'POST':
         if form.is_valid():
             form.save()
-            return redirect(do_login)
+            return redirect('user/login.html')
 
     return render(request, 'user/cadastro.html', context)
 
@@ -23,9 +19,9 @@ def do_login(request):
 
         if user is not None:
             login(request, user)
-            return redirect('/')
+            return redirect('/marcacaoLaboratorio')
     return render(request, 'user/login.html')
-
+@login_required
 def do_logout(request):
     logout(request)
     return redirect('/login')

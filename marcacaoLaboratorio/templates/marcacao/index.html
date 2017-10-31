@@ -1,0 +1,42 @@
+{% include 'template.html' %}
+{% block conteudo %}
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+     <h1 class="page-header">Dashboard</h1>
+
+          <h2 class="sub-header">Tebela de vendas</h2>
+            <a href="{% url 'marcacaoLaboratorio:novoMarcacao' %}" class="btn btn-success">Adcionar</a>
+
+          <div class="table-responsive">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Nome Laboratorio</th>
+                  <th>Professor</th>
+                  <th>Data Marcada</th>
+                  <th>Hora Marcada</th>
+                  <th>Ação</th>
+                </tr>
+              </thead>
+              <tbody>
+            {% for lista in lista_marcacao %}
+
+               <tr>
+                  <td>{{ lista.cod_laboratorio }}</td>
+                  <td>{{ lista.cod_user.first_name }}</td>
+                  <td>{{ lista.data }}</td>
+                  <td>{{ lista.hora }}</td>
+
+                  <td>
+                      {% if lista.cod_user.id == user.id %}
+                          <a href="{% url 'marcacaoLaboratorio:editarMarcacao' lista.id %}" class="btn btn-primary">Editar</a>
+                          <a href="{% url 'marcacaoLaboratorio:excluirMarcacao' lista.id %}" class="btn btn-danger">Excluir</a>
+                      {% endif %}
+                  </td>
+               </tr>
+            {% endfor %}
+
+              </tbody>
+            </table>
+          </div>
+</div>
+{% endblock %}

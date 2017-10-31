@@ -19,4 +19,5 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include('user.urls', namespace='usuario', app_name='user')),
+    url(r'^marcacaoLaboratorio', include('marcacaoLaboratorio.urls', namespace='marcacaoLaboratorio', app_name='marcacaoLaboratorio')),
 ]

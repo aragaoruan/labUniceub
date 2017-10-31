@@ -1,0 +1,36 @@
+{% include 'template.html' %}
+{% block conteudo %}
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+     <h1 class="page-header">Nova Marcacão</h1>
+
+        <form method="post">
+
+        {% csrf_token %}
+
+          <div class="form-group">
+              <label for="exampleInputPassword1">Laboratorio</label>
+              {{ form.cod_laboratorio }}
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputPassword1">Data</label>
+            {{ form.data }}
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputPassword1">Hora</label>
+            {{ form.hora }}
+          </div>
+
+            <div class="form-group">
+
+            <input type="hidden" class="form-control" name="cod_user" value="{{ user.id }}">
+                {{ form.data_marcacao }}
+          </div>
+
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+
+
+    </div>
+{% endblock %}
