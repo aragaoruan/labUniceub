@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
 from user.forms import UserModelForm
 from django.contrib.auth import authenticate, login ,logout
-from django.contrib.auth.decorators import login_required
 
 def cadastro(request):
     form = UserModelForm(request.POST or None)
