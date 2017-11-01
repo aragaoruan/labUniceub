@@ -25,6 +25,7 @@ def cadastrarLaboratorio(request):
 
     return render(request, 'laboratorio/novo.html', context)
 
+@login_required
 def editarLaboratorio(request, id):
     laboratorio = Laboratorio.objects.get(id=id)
     formulario = LaboratorioForm(request.POST or None, instance=laboratorio)
@@ -40,6 +41,7 @@ def editarLaboratorio(request, id):
 
     return render(request, 'laboratorio/novo.html', context)
 
+@login_required
 def excluirLaboratorio(request, id):
     laboratotio = Laboratorio.objects.get(id=id)
     laboratotio.delete()

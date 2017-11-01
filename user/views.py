@@ -21,7 +21,7 @@ def do_login(request):
             login(request, user)
             return redirect('/marcacaoLaboratorio')
     return render(request, 'user/login.html')
-@login_required
+
 def do_logout(request):
     logout(request)
-    return redirect('/login')
+    return redirect('/')

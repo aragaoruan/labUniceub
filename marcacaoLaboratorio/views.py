@@ -10,6 +10,7 @@ def do_index(request):
 
     return render(request, 'marcacao/index.html', context)
 
+@login_required
 def cadastrarMarcacao(request):
 
     formulario = MarcacaoForm(request.POST or None)
@@ -27,6 +28,7 @@ def cadastrarMarcacao(request):
 
     return render(request, 'marcacao/novo.html', context)
 
+@login_required
 def editarMarcacao(request, id):
     marcacao = Marcacao.objects.get(id=id)
     formulario = MarcacaoForm(request.POST or None, instance=marcacao)
@@ -42,6 +44,7 @@ def editarMarcacao(request, id):
 
     return render(request, 'marcacao/novo.html', context)
 
+@login_required
 def excluirMarcacao(request, id):
         marcacao = Marcacao.objects.get(id=id)
         marcacao.delete()
