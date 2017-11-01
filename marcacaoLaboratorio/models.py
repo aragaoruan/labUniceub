@@ -1,12 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-
-class Laboratorio(models.Model):
-    nome_laboratorio = models.CharField(max_length = 100)
-    sigla_laboratorio = models.CharField(max_length= 3)
-
-    def __str__(self):
-        return self.nome_laboratorio
+from laboratorio.models import Laboratorio
 
 class Marcacao(models.Model):
     cod_laboratorio = models.ForeignKey(Laboratorio, on_delete=models.CASCADE)

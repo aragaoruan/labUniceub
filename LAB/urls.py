@@ -20,4 +20,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include('user.urls', namespace='usuario', app_name='user')),
     url(r'^marcacaoLaboratorio', include('marcacaoLaboratorio.urls', namespace='marcacaoLaboratorio', app_name='marcacaoLaboratorio')),
+    url(r'^laboratorio', include('laboratorio.urls', namespace='laboratorio', app_name='laboratorio')),
 ]

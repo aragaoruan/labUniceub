@@ -1,0 +1,25 @@
+{% include 'template.html' %}
+{% block conteudo %}
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+     <h1 class="page-header">Nova Laboratorio</h1>
+
+        <form method="post">
+
+        {% csrf_token %}
+
+          <div class="form-group">
+              <label for="exampleInputPassword1">Laboratorio</label>
+              {{ form.nome_laboratorio }}
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputPassword1">Data</label>
+            {{ form.sigla_laboratorio }}
+          </div>
+
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+
+
+    </div>
+{% endblock %}

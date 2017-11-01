@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from marcacaoLaboratorio.models import Marcacao, Laboratorio
+from marcacaoLaboratorio.models import Marcacao
 from marcacaoLaboratorio.forms import MarcacaoForm
 
 @login_required

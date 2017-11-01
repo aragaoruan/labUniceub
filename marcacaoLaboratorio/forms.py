@@ -1,7 +1,7 @@
 #-*- coding:utf-8 -*-
 from django.forms import ModelForm
 from django import forms
-from marcacaoLaboratorio.models import Marcacao, User
+from marcacaoLaboratorio.models import Marcacao
 from datetime import datetime
 
 class MarcacaoForm(ModelForm):
@@ -15,8 +15,6 @@ class MarcacaoForm(ModelForm):
             'hora':forms.TimeInput(attrs={'class':'form-control', 'type':'time'}),
             'data':forms.DateInput(attrs={'class':'form-control', 'type': 'date'}),
             'data_marcacao':forms.TextInput(attrs={'class':'form-control', 'type': 'hidden', 'value': datetime.now()}),
-
-
         }
 
 
