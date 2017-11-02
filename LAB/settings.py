@@ -37,9 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'user',
-    'marcacaoLaboratorio',
-    'laboratorio',
+    'user', # APP DE USUARIO
+    'marcacaoLaboratorio', # APP PARA MARCAR LABORATORIO
+    'laboratorio', # APP PARA CRIAR UM NOVO LABORATORIO
 ]
 
 MIDDLEWARE = [
@@ -77,14 +77,17 @@ WSGI_APPLICATION = 'LAB.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
+
+# É NECESARIO CRIAR NO MYSQL UM BANCO DE DADOS COM O MESMO NOME
+# EXEMPLO : create database lab_uniceub; (lab_uniceub **nome schema**)
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'lab_uniceub',
-        'USER': 'root',
-        'PASSWORD': 'aragaoRuan10!',
-        'HOST': '127.0.0.1',
-        'PORT': '3306'
+        'ENGINE': 'django.db.backends.mysql', # TIPO DE BANCO DE DADOS
+        'NAME': 'lab_uniceub', # NOME DO SCHEMA BANCO DE DADOS
+        'USER': 'root', # NOME USUARIO DO BANCO DE DADOS
+        'PASSWORD': 'uniceub', # SENHA BANCO DE DADOS
+        'HOST': '127.0.0.1', # HOST BANCO DE DADOS
+        'PORT': '3306' # POSTA DO BANCO DE DADOS
     }
 }
 
@@ -127,7 +130,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# PARA USAR OS ARQUIVOS DENTRO DA PASTA  static
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
-LOGIN_URL = '/login'
+
+# LOGIN URL
+LOGIN_URL = '/'

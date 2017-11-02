@@ -1,5 +1,10 @@
+# importa admin do DJANGO
 from django.contrib import admin
-from marcacaoLaboratorio.models import Laboratorio, Marcacao
+#importa Marcacao de models.py
+from marcacaoLaboratorio.models import Marcacao
 
-admin.site.register(Laboratorio)
+"""
+adciona no adminstrador do sistema a model Laboratorio
+para poder ( criar , deletar, editar) qualquer dados desta model
+"""
 admin.site.register(Marcacao)
