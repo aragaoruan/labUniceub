@@ -85,7 +85,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql', # TIPO DE BANCO DE DADOS
         'NAME': 'lab_uniceub', # NOME DO SCHEMA BANCO DE DADOS
         'USER': 'root', # NOME USUARIO DO BANCO DE DADOS
-        'PASSWORD': 'uniceub', # SENHA BANCO DE DADOS
+        'PASSWORD': 'aragaoRuan10!', # SENHA BANCO DE DADOS
         'HOST': '127.0.0.1', # HOST BANCO DE DADOS
         'PORT': '3306' # POSTA DO BANCO DE DADOS
     }

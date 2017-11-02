@@ -1,9 +1,8 @@
 {%  include 'head.html' %}
-
 {% block content %}
 
       <form action="{% url 'usuario:cadastro' %}" class="form-signin" method="post">
-        <h2 class="form-signin-heading">Please sign in</h2>
+        <h2 class="form-signin-heading">Cadastro</h2>
 
           {% csrf_token %}
 
@@ -27,9 +26,8 @@
           {{ form.password }}
           {{ form.password.errors }}
 
-
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-        <a class="btn btn-lg btn-primary btn-block" href="{% url 'usuario:login' %}">Log in</a>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Cadastrar</button>
+        <a class="btn btn-lg btn-primary btn-block" href="{% url 'usuario:login' %}">Login</a>
       </form>
 
 {% endblock %}

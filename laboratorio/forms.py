@@ -11,7 +11,9 @@ class LaboratorioForm(ModelForm):
 
     class Meta:
         model = Laboratorio # nome da MODEL
-        fields = ['nome_laboratorio', 'sigla_laboratorio'] # nome das colunas que sera criado o formulario
+
+        # nome das colunas que sera criado o formulario
+        fields = ['nome_laboratorio', 'sigla_laboratorio']
         widgets = {
             # estilizando o form
             'nome_laboratorio':forms.TextInput(attrs={'class':'form-control'}),

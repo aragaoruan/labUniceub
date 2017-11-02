@@ -9,7 +9,6 @@ from user.forms import UserModelForm
 from django.contrib.auth import authenticate, login ,logout
 
 def cadastro(request):
-
     form = UserModelForm(request.POST or None)
 
     # transformao formulario em um JSON para mandar para o HTML
